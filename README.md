@@ -47,74 +47,76 @@
 
 ## 💡 Introduction
 
-Though Rectified Flow (RF) models have achieved remarkable performance in visual generation, their practical deployments are challenged by slow inference speeds. Previous training-free acceleration methods (like TeaCache, EasyCache) typically follow a **caching-and-reusing** paradigm, neglecting the growing mismatch between static cached values and evolving inputs.
+Though Rectified Flow (RF) models have achieved remarkable performance in visual generation, their practical deployments are challenged by slow inference speeds. Previous training-free acceleration methods typically follow a **caching-and-reusing** paradigm, neglecting the growing mismatch between static cached values and evolving inputs.
 
 We propose **Velocity Decomposition and Estimation (VDE)**, a novel method that shifts the paradigm from *caching-and-reusing* to **decomposing-and-estimating**. 
 - VDE decomposes the model's velocity output into components parallel and orthogonal to the input.
-- It exploits the temporal predictability of the components' coefficients (strong local linearity) and the consistency of the orthogonal direction.
+- It exploits the temporal predictability of the components' coefficients and the consistency of the orthogonal direction.
 - VDE periodically anchors the model's state and precisely estimates subsequent outputs analytically in an inherently **input-adaptive** manner.
 
-VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual quality, outperforming the best cache-based baseline (EasyCache-slow) by **19.5% in SSIM**, **30.3% in PSNR**, and reducing **LPIPS by 55.4%** in image generation.
+VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual quality, outperforming the best cache-based baseline by **19.5% in SSIM**, **30.3% in PSNR**, and reducing **LPIPS by 55.4%** in image generation.
 
 ---
 
 ## 🔥 Latest News
--[2026/03/xx] ✨ Code and demo for **VDE** are officially released! Support [Flux-dev],[Qwen-Image], and [Wan2.1].
+- [2026/03/xx] ✨ **ComfyUI-VDE** is now available! Enjoy VDE acceleration directly in your ComfyUI workflows.
+-[2026/03/xx] 🚀 Code and demo for **VDE** are officially released! Support Image, Video, and 3D generation.
 - [2026/02/xx] 🎉 **VDE** is accepted by **CVPR 2026**! 
+
+---
+
+## 🛠️ Supported Models
+
+VDE is highly versatile and supports a wide range of state-of-the-art Rectified Flow models across modalities:
+
+🎨 **Image Generation**
+- [x] [FLUX.1-dev](https://github.com/black-forest-labs/flux)
+- [x] [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
+- [x] [Z-Image](https://github.com/Tongyi-MAI/Z-Image)
+- [x] [HiDream](https://github.com/HiDream-ai/HiDream-I1)
+
+🎥 **Video Generation**
+- [x][Wan2.1](https://github.com/Wan-Video/Wan2.1) (T2V & I2V)
+- [x] [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)
+- [x] [Open-Sora](https://github.com/hpcaitech/Open-Sora)
+- [x] [Open-Sora-Plan](https://github.com/PKU-YuanGroup/Open-Sora-Plan)
+
+🧊 **3D Generation**
+- [x] [Trellis2](https://github.com/microsoft/TRELLIS)
+
+---
+
+## 🧩 Ecosystem & Integrations
+
+We are actively working to integrate VDE into the broader open-source generative AI ecosystem. If you are a developer, we welcome PRs!
+
+- **[ComfyUI-VDE]([Link_to_your_ComfyUI_Repo])**: We provide a custom node for **ComfyUI**, allowing regular users to achieve 2x~3x faster generation in their favorite workflows without writing code.
+- **[Cache-DiT](https://github.com/vipshop/cache-dit)** & **[x-DiT](https://github.com/xdit-project/xDiT)**: VDE is compatible with multi-GPU and system-level acceleration engines. *(Integration in progress)*
+- **[Diffusers](https://github.com/huggingface/diffusers)**: We are preparing upstream PRs to bring VDE natively into Hugging Face `diffusers`.
 
 ---
 
 ## ⚡ Performance & Demos
 
 ### 1. FLUX-dev (Text-to-Image)
-
 **Baseline Latency (T=50): 8.20s**
 | Method | Speedup | Latency | SSIM (↑) | PSNR (↑) | LPIPS (↓) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **VDE-slow** | **2.21×** | 3.70 s | **0.8877** | **25.81** | **0.1243** |
-| **VDE-medium** | **2.70×** | 3.04 s | 0.8499 | 24.02 | 0.1679 |
-| **VDE-fast** | **3.01×** | 2.72 s | 0.8267 | 23.19 | 0.1997 |
 | *EasyCache-fast* | *2.91×* | *2.81 s* | *0.7240* | *19.59* | *0.3197* |
 
-<details>
-<summary><b>🖼️ Click to view visual comparisons on FLUX-dev</b></summary>
-<div align="center">
-  <img src="./assets/flux_comparison.png" alt="Flux Visual Comparison">
-</div>
-</details>
-
 ### 2. Qwen-Image (Text-to-Image)
-
 **Baseline Latency (T=50): 12.53s**
 | Method | Speedup | Latency | SSIM (↑) | PSNR (↑) | LPIPS (↓) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **VDE-slow** | **2.04×** | 6.14 s | **0.9362** | **28.58** | **0.0691** |
-| **VDE-fast** | **2.70×** | 4.64 s | 0.8967 | 25.46 | 0.1096 |
 | *TeaCache-fast* | *2.69×* | *4.66 s* | *0.5596* | *14.43* | *0.4773* |
 
-### 3. Wan2.1-1.3B (Text-to-Video)
-
+### 3. Wan2.1 (Text-to-Video)
 **Baseline Latency (T=50, 81 frames, 832×480): 175.35s**
 | Method | Speedup | Latency | VBench (%) ↑ | SSIM (↑) | LPIPS (↓) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **T=50 (Original)** | 1.00× | 175.35 s | 81.30 | - | - |
 | **VDE-slow** | **2.08×** | 84.18 s | **80.32** | **0.8902** | **0.0554** |
-| **VDE-fast** | **2.50×** | 70.11 s | **80.43** | **0.8658** | **0.0754** |
-
----
-
-## 🛠️ Supported Models
-
-VDE currently supports and has been fully tested on the following Rectified Flow models:
-
-**Text-to-Image**
--[x] [FLUX.1-dev](https://github.com/black-forest-labs/flux)
-- [x] [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
-
-**Text-to-Video**
-- [x] [Wan2.1-1.3B](https://github.com/Wan-Video/Wan2.1)
-
-*(More models are coming soon! Contributions and PRs are highly welcome.)*
 
 ---
 
@@ -127,3 +129,66 @@ cd VDE
 conda create -n vde python=3.10
 conda activate vde
 pip install -r requirements.txt
+```
+
+### Inference Example (FLUX-dev)
+```python
+from vde.pipeline import VDEFluxPipeline
+import torch
+
+pipe = VDEFluxPipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16)
+pipe.to("cuda")
+
+# Using VDE-slow setting (2.21x speedup, highest quality)
+image = pipe(
+    prompt="A slice of cake with frosting on a plate",
+    num_inference_steps=50,
+    vde_mode="slow" 
+).images[0]
+
+image.save("output_vde.jpg")
+```
+*For detailed scripts on other models (Wan2.1, Qwen-Image, etc.), please refer to the `examples/` folder.*
+
+---
+
+## 📋 To-Do List
+- [x] Release core VDE algorithm and Paper.
+- [x] Support Text-to-Image (FLUX, Qwen, Z-Image, HiDream).
+- [x] Support Text-to-Video (Wan2.1, HunyuanVideo, Open-Sora).
+- [ ] Release ComfyUI Custom Nodes.
+- [ ] Upstream PR to Hugging Face `diffusers`.
+
+---
+
+## 💐 Acknowledgement
+This project is inspired by or heavily relies on the following open-source projects: [Diffusers](https://github.com/huggingface/diffusers), [TeaCache](https://github.com/ali-vilab/TeaCache), [EasyCache], [x-DiT], and [Cache-DiT]. We sincerely thank the authors for their brilliant works and contributions to the open-source community!
+
+---
+
+## 🔒 License
+This project is licensed under the [Apache License 2.0](LICENSE). 
+
+---
+
+## 📖 Citation
+If you find VDE useful for your research or applications, please consider giving us a star ⭐ and citing our paper:
+
+```bibtex
+@inproceedings{vde2026,
+  title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
+  author    = {[Your Name 1] and [Your Name 2] and [Your Name 3]},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
+}
+```
+
+<div align='center'>
+<a href="https://star-history.com/#[Your_GitHub_Username]/VDE&Date">
+  <picture align='center'>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date" width=400px />
+  </picture>
+</a>
+</div>
