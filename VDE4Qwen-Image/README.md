@@ -1,4 +1,5 @@
-# ⚡ Qwen-Image Inference Acceleration via VDE[**VDE**](https://github.com/YourOrg/VDE) naturally supports accelerated inference for[**Qwen-Image**](https://github.com/QwenLM/Qwen-Image) by shifting the paradigm from caching-and-reusing to decomposing-and-estimating. We provide two optional acceleration paths based on the balance between quality and speed.
+# ⚡ Qwen-Image Inference Acceleration via VDE
+[**VDE**](https://github.com/YourOrg/VDE) naturally supports accelerated inference for[**Qwen-Image**](https://github.com/QwenLM/Qwen-Image) by shifting the paradigm from caching-and-reusing to decomposing-and-estimating. We provide two optional acceleration paths based on the balance between quality and speed.
 
 ---
 
