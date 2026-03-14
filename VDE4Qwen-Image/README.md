@@ -44,4 +44,4 @@ If you find **VDE** useful in your research or applications, please consider giv
 
 ## Acknowledgements
 
-We would like to thank the contributors to the  [Qwen-Image](https://github.com/QwenLM/Qwen-Image), and (https:// and [Diffusers](https://github.com/huggingface/diffusers).
+We would like to thank the contributors to the  [Qwen-Image](https://github.com/QwenLM/Qwen-Image), and [Diffusers](https://github.com/huggingface/diffusers).
