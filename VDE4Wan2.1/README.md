@@ -31,3 +31,19 @@ python inference_wan21.py
 # VDE acceleration modes
 python inference_wan21.py --vde_mode slow
 python inference_wan21.py --vde_mode fast
+
+## 📖 Citation
+If you find **VDE** useful in your research or applications, please consider giving us a star ⭐ and citing it by the following BibTeX entry:
+
+```bibtex
+@inproceedings{tan2026vde,
+  title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
+  author    = {Junwen Tan and Jinglin Liang and Hongyuan Chen and Shuangping Huang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
+}
+```
+
+## Acknowledgements
+
+We would like to thank the contributors to the  [Wan2.1](https://github.com/Wan-Video/Wan2.1), and [Diffusers](https://github.com/huggingface/diffusers).
