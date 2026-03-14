@@ -1,5 +1,3 @@
-#### 2. `VDE4Qwen-Image/README.md`
-```markdown
 # ⚡ Qwen-Image Inference Acceleration via VDE[**VDE**](https://github.com/YourOrg/VDE) naturally supports accelerated inference for[**Qwen-Image**](https://github.com/QwenLM/Qwen-Image) by shifting the paradigm from caching-and-reusing to decomposing-and-estimating. We provide two optional acceleration paths based on the balance between quality and speed.
 
 ---
@@ -23,7 +21,7 @@
 
 Please refer to [Qwen-Image](https://github.com/QwenLM/Qwen-Image) for base environment setup.
 
-```shell
+
 # Required for Qwen2.5-VL support
 pip install transformers>=4.51.3
 
