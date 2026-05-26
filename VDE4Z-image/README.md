@@ -1,194 +1,48 @@
-<div align="center">
-  <img src="./assets/logo.png" style="width:auto; height:120px;" alt="VDE Logo">
-</div>
+# VDE Inference Examples
 
-# [CVPR 2026] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
+This repository contains single-file inference examples for VDE acceleration on FLUX.1, Qwen-Image, Wan2.1, and Z-Image.
 
-<div class="is-size-5 publication-authors" align="center">
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 1]</a><sup>1,2*</sup>,
-  </span>
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 2]</a><sup>1</sup>,
-  </span>
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 3]</a><sup>2†</sup>
-  </span>
-</div>
+The working tree keeps two kinds of files:
 
-<div class="is-size-5 publication-authors" align="center">
-  <span class="author-block"><sup>1</sup>[Your Institution / University 1],</span>
-  <span class="author-block"><sup>2</sup>[Your Institution / University 2]</span>
-</div>
+- Local runnable files in `VDE4*/`, which may use local model and diffusers paths through environment-variable defaults.
+- GitHub release files generated under `github/`, which remove private local paths and use public model identifiers or explicit CLI arguments.
 
-<div class="is-size-5 publication-authors" align="center">
-  (* Equal contribution. † Corresponding author.)
-</div>
+See `LOCAL_RUNS.md` for the local path checklist.
 
-<h5 align="center">
+## Local Smoke Test
 
-<a href="[Project Page Link]" target="_blank">
-  <img src="https://img.shields.io/badge/Project-Website-blue.svg" alt="Project Page">
-</a>
-<a href="[Arxiv Link]" target="_blank">
-  <img src="https://img.shields.io/badge/Paper-PDF-critical.svg?logo=adobeacrobatreader" alt="Paper">
-</a>
-<a href="./LICENSE" target="_blank">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-yellow.svg" alt="License">
-</a>
-<a href="[GitHub Repo Link]/stargazers" target="_blank">
-  <img src="https://img.shields.io/github/stars/[Your_GitHub_Username]/VDE.svg?style=social" alt="GitHub Stars">
-</a>
+Run syntax checks first:
 
-</h5>
-
-![VDE Overview](./assets/cover.pdf)
-> **Figure 1.** Comparison between VDE and standard 50-step sampling across Flux, Qwen-Image, and Wan2.1. VDE achieves comparable visual quality with dramatically reduced runtime (up to 3.01× speedup).
-
-## 💡 Introduction
-
-Though Rectified Flow (RF) models have achieved remarkable performance in visual generation, their practical deployments are challenged by slow inference speeds. Previous training-free acceleration methods typically follow a **caching-and-reusing** paradigm, neglecting the growing mismatch between static cached values and evolving inputs.
-
-We propose **Velocity Decomposition and Estimation (VDE)**, a novel method that shifts the paradigm from *caching-and-reusing* to **decomposing-and-estimating**. 
-- VDE decomposes the model's velocity output into components parallel and orthogonal to the input.
-- It exploits the temporal predictability of the components' coefficients and the consistency of the orthogonal direction.
-- VDE periodically anchors the model's state and precisely estimates subsequent outputs analytically in an inherently **input-adaptive** manner.
-
-VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual quality, outperforming the best cache-based baseline by **19.5% in SSIM**, **30.3% in PSNR**, and reducing **LPIPS by 55.4%** in image generation.
-
----
-
-## 🔥 Latest News
-- [2026/03/xx] ✨ **ComfyUI-VDE** is now available! Enjoy VDE acceleration directly in your ComfyUI workflows.
--[2026/03/xx] 🚀 Code and demo for **VDE** are officially released! Support Image, Video, and 3D generation.
-- [2026/02/xx] 🎉 **VDE** is accepted by **CVPR 2026**! 
-
----
-
-## 🛠️ Supported Models
-
-VDE is highly versatile and supports a wide range of state-of-the-art Rectified Flow models across modalities:
-
-🎨 **Image Generation**
-- [x] [FLUX.1-dev](https://github.com/black-forest-labs/flux)
-- [x] [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
-- [x] [Z-Image](https://github.com/Tongyi-MAI/Z-Image)
-- [x] [HiDream](https://github.com/HiDream-ai/HiDream-I1)
-
-🎥 **Video Generation**
-- [x][Wan2.1](https://github.com/Wan-Video/Wan2.1) (T2V & I2V)
-- [x] [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)
-- [x] [Open-Sora](https://github.com/hpcaitech/Open-Sora)
-- [x] [Open-Sora-Plan](https://github.com/PKU-YuanGroup/Open-Sora-Plan)
-
-🧊 **3D Generation**
-- [x] [Trellis2](https://github.com/microsoft/TRELLIS)
-
----
-
-## 🧩 Ecosystem & Integrations
-
-We are actively working to integrate VDE into the broader open-source generative AI ecosystem. If you are a developer, we welcome PRs!
-
-- **[ComfyUI-VDE]([Link_to_your_ComfyUI_Repo])**: We provide a custom node for **ComfyUI**, allowing regular users to achieve 2x~3x faster generation in their favorite workflows without writing code.
-- **[Cache-DiT](https://github.com/vipshop/cache-dit)** & **[x-DiT](https://github.com/xdit-project/xDiT)**: VDE is compatible with multi-GPU and system-level acceleration engines. *(Integration in progress)*
-- **[Diffusers](https://github.com/huggingface/diffusers)**: We are preparing upstream PRs to bring VDE natively into Hugging Face `diffusers`.
-
----
-
-## ⚡ Performance & Demos
-
-### 1. FLUX-dev (Text-to-Image)
-**Baseline Latency (T=50): 8.20s**
-| Method | Speedup | Latency | SSIM (↑) | PSNR (↑) | LPIPS (↓) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| **VDE-slow** | **2.21×** | 3.70 s | **0.8877** | **25.81** | **0.1243** |
-| *EasyCache-fast* | *2.91×* | *2.81 s* | *0.7240* | *19.59* | *0.3197* |
-
-### 2. Qwen-Image (Text-to-Image)
-**Baseline Latency (T=50): 12.53s**
-| Method | Speedup | Latency | SSIM (↑) | PSNR (↑) | LPIPS (↓) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| **VDE-slow** | **2.04×** | 6.14 s | **0.9362** | **28.58** | **0.0691** |
-| *TeaCache-fast* | *2.69×* | *4.66 s* | *0.5596* | *14.43* | *0.4773* |
-
-### 3. Wan2.1 (Text-to-Video)
-**Baseline Latency (T=50, 81 frames, 832×480): 175.35s**
-| Method | Speedup | Latency | VBench (%) ↑ | SSIM (↑) | LPIPS (↓) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| **VDE-slow** | **2.08×** | 84.18 s | **80.32** | **0.8902** | **0.0554** |
-
----
-
-## 🚀 Getting Started
-
-### Installation
 ```bash
-git clone https://github.com/[Your_GitHub_Username]/VDE.git
-cd VDE
-conda create -n vde python=3.10
-conda activate vde
-pip install -r requirements.txt
+python scripts/check_python_syntax.py VDE4FLUX/inference_flux1.py VDE4QwenImage/inference_qwenimage.py VDE4Wan2.1/inference_wan.py VDE4Z-Image/inference_z-image.py VDE4Z-Image/inference_z-image-turbo.py
 ```
 
-### Inference Example (FLUX-dev)
-```python
-from vde.pipeline import VDEFluxPipeline
-import torch
+Then run a model-specific script after setting the required local paths:
 
-pipe = VDEFluxPipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16)
-pipe.to("cuda")
-
-# Using VDE-slow setting (2.21x speedup, highest quality)
-image = pipe(
-    prompt="A slice of cake with frosting on a plate",
-    num_inference_steps=50,
-    vde_mode="slow" 
-).images[0]
-
-image.save("output_vde.jpg")
-```
-*For detailed scripts on other models (Wan2.1, Qwen-Image, etc.), please refer to the `examples/` folder.*
-
----
-
-## 📋 To-Do List
-- [x] Release core VDE algorithm and Paper.
-- [x] Support Text-to-Image (FLUX, Qwen, Z-Image, HiDream).
-- [x] Support Text-to-Video (Wan2.1, HunyuanVideo, Open-Sora).
-- [ ] Release ComfyUI Custom Nodes.
-- [ ] Upstream PR to Hugging Face `diffusers`.
-
----
-
-## 💐 Acknowledgement
-This project is inspired by or heavily relies on the following open-source projects: [Diffusers](https://github.com/huggingface/diffusers), [TeaCache](https://github.com/ali-vilab/TeaCache), [EasyCache], [x-DiT], and [Cache-DiT]. We sincerely thank the authors for their brilliant works and contributions to the open-source community!
-
----
-
-## 🔒 License
-This project is licensed under the [Apache License 2.0](LICENSE). 
-
----
-
-## 📖 Citation
-If you find VDE useful for your research or applications, please consider giving us a star ⭐ and citing our paper:
-
-```bibtex
-@inproceedings{vde2026,
-  title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
-  author    = {[Your Name 1] and [Your Name 2] and [Your Name 3]},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2026}
-}
+```bash
+python scripts/check_runtime_env.py --target flux
+bash VDE4FLUX/run_inference_flux1.sh
+python scripts/check_runtime_env.py --target qwenimage
+bash VDE4QwenImage/run_inference_qwenimage.sh
+python scripts/check_runtime_env.py --target wan
+bash VDE4Wan2.1/run_inference_wan.sh
+python scripts/check_runtime_env.py --target zimage
+bash VDE4Z-Image/run_inference_z-image.sh
+python scripts/check_runtime_env.py --target zimage-turbo
+bash VDE4Z-Image/run_inference_z-image-turbo.sh
 ```
 
-<div align='center'>
-<a href="https://star-history.com/#[Your_GitHub_Username]/VDE&Date">
-  <picture align='center'>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date" width=400px />
-  </picture>
-</a>
-</div>
+## Prepare GitHub Files
+
+From PowerShell:
+
+```powershell
+.\scripts\prepare_github_release.ps1
+```
+
+The generated `github/` directory is the version intended for publication. Before pushing, inspect it with:
+
+```bash
+rg -n "/(fsave)|t[j]w|c[h]y|C:\\\\U[s]ers|[YX]:" github
+python scripts/check_python_syntax.py github/VDE4FLUX/inference_flux1.py github/VDE4QwenImage/inference_qwenimage.py github/VDE4Wan2.1/inference_wan.py github/VDE4Z-Image/inference_z-image.py github/VDE4Z-Image/inference_z-image-turbo.py
+```
