@@ -32,7 +32,7 @@
 
 </h5>
 
-![VDE Overview](./assets/cover.pdf)
+![VDE Overview](./assets/cover_01.png)
 > **Figure 1.** Comparison between VDE and standard 50-step sampling across Flux, Qwen-Image, and Wan2.1. VDE achieves comparable visual quality with dramatically reduced runtime (up to 3.01× speedup).
 
 ## 💡 Introduction
