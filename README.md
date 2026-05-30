@@ -5,7 +5,7 @@
 # [CVPR 2026] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
 
 <div align="center" style="font-size: 20px; font-weight: 700;">
-  <span class="author-block">Junwen Tan</span>,
+  <a href="https://github.com/Tan-Junwen" target="_blank">Junwen Tan</a>,
   <span class="author-block">Jinglin Liang</span>,
   <span class="author-block">Hongyuan Chen</span>,
   <span class="author-block">Shuangping Huang</span>
