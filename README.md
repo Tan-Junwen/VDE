@@ -15,15 +15,6 @@
   <span class="author-block">South China University of Technology</span>
 </div>
 
-<div class="is-size-5 publication-authors" align="center">
-  <span class="author-block"><sup>1</sup>[Your Institution / University 1],</span>
-  <span class="author-block"><sup>2</sup>[Your Institution / University 2]</span>
-</div>
-
-<div class="is-size-5 publication-authors" align="center">
-  (* Equal contribution. † Corresponding author.)
-</div>
-
 <h5 align="center">
 
 <a href="[Project Page Link]" target="_blank">
