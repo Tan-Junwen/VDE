@@ -77,8 +77,8 @@ VDE is highly versatile and supports a wide range of state-of-the-art Rectified 
 🧊 **3D Generation**
 - [x] [Trellis2](https://github.com/microsoft/TRELLIS)
 
+<!--
 ---
-
 ## 🧩 Ecosystem & Integrations
 
 We are actively working to integrate VDE into the broader open-source generative AI ecosystem. If you are a developer, we welcome PRs!
@@ -88,6 +88,7 @@ We are actively working to integrate VDE into the broader open-source generative
 - **[Diffusers](https://github.com/huggingface/diffusers)**: We are preparing upstream PRs to bring VDE natively into Hugging Face `diffusers`.
 
 ---
+-->
 
 ## ⚡ Performance & Demos
 
@@ -155,7 +156,8 @@ image.save("output_vde.jpg")
 ---
 
 ## 💐 Acknowledgement
-This project is inspired by or heavily relies on the following open-source projects: [Diffusers](https://github.com/huggingface/diffusers), [TeaCache](https://github.com/ali-vilab/TeaCache), [EasyCache], [x-DiT], and [Cache-DiT]. We sincerely thank the authors for their brilliant works and contributions to the open-source community!
+
+This project builds upon several excellent open-source projects, including [Diffusers](https://github.com/huggingface/diffusers), [FLUX](https://github.com/black-forest-labs/flux), [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Z-Image](https://github.com/Tongyi-MAI/Z-Image), [Wan2.1](https://github.com/Wan-Video/Wan2.1), and [HunyuanVideo](https://github.com/Tencent/HunyuanVideo). We sincerely thank the authors for their contributions to the community.
 
 ---
 
