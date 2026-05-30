@@ -49,9 +49,12 @@ VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual 
 ---
 
 ## 🔥 Latest News
+<!--
 - [2026/03/xx] ✨ **ComfyUI-VDE** is now available! Enjoy VDE acceleration directly in your ComfyUI workflows.
--[2026/03/xx] 🚀 Code and demo for **VDE** are officially released! Support Image, Video, and 3D generation.
-- [2026/02/xx] 🎉 **VDE** is accepted by **CVPR 2026**! 
+-->
+- [2026/05/30] 🚀 The Code for **VDE** is officially released! Support Image and Video generation/editing.
+- [2026/05/22] 📄 Our paper is available on [arXiv](https://arxiv.org/pdf/2605.23381).
+- [2026/02/21] 🎉 **VDE** is accepted by **CVPR 2026**! 
 
 ---
 
