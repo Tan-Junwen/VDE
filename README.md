@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="./assets/logo.png" style="width:auto; height:120px;" alt="VDE Logo">
-</div>
-
 # [CVPR 2026] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
 
 <div align="center" style="font-size: 20px; font-weight: 700;">
