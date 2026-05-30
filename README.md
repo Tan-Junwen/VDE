@@ -5,15 +5,14 @@
 # [CVPR 2026] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
 
 <div class="is-size-5 publication-authors" align="center">
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 1]</a><sup>1,2*</sup>,
-  </span>
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 2]</a><sup>1</sup>,
-  </span>
-  <span class="author-block">
-    <a href="[Personal Page Link]" target="_blank">[Your Name 3]</a><sup>2†</sup>
-  </span>
+  <span class="author-block">Junwen Tan</span>,
+  <span class="author-block">Jinglin Liang</span>,
+  <span class="author-block">Hongyuan Chen</span>,
+  <span class="author-block">Shuangping Huang</span>
+</div>
+
+<div class="is-size-5 publication-authors" align="center">
+  <span class="author-block">South China University of Technology</span>
 </div>
 
 <div class="is-size-5 publication-authors" align="center">
