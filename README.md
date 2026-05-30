@@ -17,17 +17,17 @@
 
 <h5 align="center">
 
-<a href="[Project Page Link]" target="_blank">
+<a href="https://github.com/Tan-Junwen/VDE" target="_blank">
   <img src="https://img.shields.io/badge/Project-Website-blue.svg" alt="Project Page">
 </a>
-<a href="[Arxiv Link]" target="_blank">
+<a href="https://arxiv.org/pdf/2605.23381" target="_blank">
   <img src="https://img.shields.io/badge/Paper-PDF-critical.svg?logo=adobeacrobatreader" alt="Paper">
 </a>
 <a href="./LICENSE" target="_blank">
   <img src="https://img.shields.io/badge/License-Apache%202.0-yellow.svg" alt="License">
 </a>
-<a href="[GitHub Repo Link]/stargazers" target="_blank">
-  <img src="https://img.shields.io/github/stars/[Your_GitHub_Username]/VDE.svg?style=social" alt="GitHub Stars">
+<a href="https://github.com/Tan-Junwen/VDE/stargazers" target="_blank">
+  <img src="https://img.shields.io/github/stars/Tan-Junwen/VDE.svg?style=social" alt="GitHub Stars">
 </a>
 
 </h5>
