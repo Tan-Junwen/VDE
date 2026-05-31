@@ -173,7 +173,7 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 ---
 
 ## 📖 Citation
-If you find VDE useful for your research or applications, please consider giving us a star ⭐ and citing our paper:
+If you find **VDE** useful for your research or applications, please consider giving us a **star** ⭐ and **citing** our paper:
 
 ```bibtex
 @inproceedings{tan2026vde,
