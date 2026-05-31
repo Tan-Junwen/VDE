@@ -62,16 +62,16 @@ VDE is highly versatile and supports a wide range of state-of-the-art Rectified 
 - [x] [FLUX.1-dev](https://github.com/black-forest-labs/flux)
 - [x] [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
 - [x] [Z-Image](https://github.com/Tongyi-MAI/Z-Image)
-- [x] [HiDream](https://github.com/HiDream-ai/HiDream-I1)
+- [ ] [HiDream](https://github.com/HiDream-ai/HiDream-I1)
 
 🎥 **Video Generation**
-- [x][Wan2.1](https://github.com/Wan-Video/Wan2.1) (T2V & I2V)
-- [x] [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)
-- [x] [Open-Sora](https://github.com/hpcaitech/Open-Sora)
-- [x] [Open-Sora-Plan](https://github.com/PKU-YuanGroup/Open-Sora-Plan)
+- [x] [Wan2.1](https://github.com/Wan-Video/Wan2.1)
+- [ ] [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)
+- [ ] [Open-Sora](https://github.com/hpcaitech/Open-Sora)
+- [ ] [Open-Sora-Plan](https://github.com/PKU-YuanGroup/Open-Sora-Plan)
 
 🧊 **3D Generation**
-- [x] [Trellis2](https://github.com/microsoft/TRELLIS)
+- [ ] [Trellis2](https://github.com/microsoft/TRELLIS)
 
 <!--
 ---
@@ -110,6 +110,7 @@ We are actively working to integrate VDE into the broader open-source generative
 
 ---
 
+<!--
 ## 🚀 Getting Started
 
 ### Installation
@@ -141,6 +142,7 @@ image.save("output_vde.jpg")
 *For detailed scripts on other models (Wan2.1, Qwen-Image, etc.), please refer to the `examples/` folder.*
 
 ---
+-->
 
 ## 📋 To-Do List
 - [x] Release core VDE algorithm and Paper.
