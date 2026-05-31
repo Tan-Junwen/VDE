@@ -186,7 +186,7 @@ If you find VDE useful for your research or applications, please consider giving
 ```
 
 <div align='center'>
-<a href="https://star-history.com/#[Your_GitHub_Username]/VDE&Date">
+<a href="[https://star-history.com/#[Your_GitHub_Username]/VDE&Date](https://www.star-history.com/?repos=Tan-Junwen%2FVDE&type=date&legend=top-left)">
   <picture align='center'>
     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date&theme=dark" />
     <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=[Your_GitHub_Username]/VDE&type=Date" />
