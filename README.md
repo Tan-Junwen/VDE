@@ -168,9 +168,9 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 If you find VDE useful for your research or applications, please consider giving us a star ⭐ and citing our paper:
 
 ```bibtex
-@inproceedings{vde2026,
+@inproceedings{tan2026vde,
   title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
-  author    = {[Your Name 1] and [Your Name 2] and [Your Name 3]},
+  author    = {Junwen Tan and Jinglin Liang and Hongyuan Chen and Shuangping Huang},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
 }
