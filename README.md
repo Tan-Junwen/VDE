@@ -187,10 +187,12 @@ If you find VDE useful for your research or applications, please consider giving
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=Tan-Junwen%2FVDE&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Tan-Junwen/VDE&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Tan-Junwen/VDE&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Tan-Junwen/VDE&type=date&legend=top-left" />
- </picture>
-</a>
+<div align="center">
+  <a href="https://star-history.com/#Tan-Junwen/VDE&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Tan-Junwen/VDE&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Tan-Junwen/VDE&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Tan-Junwen/VDE&type=Date" />
+    </picture>
+  </a>
+</div>
