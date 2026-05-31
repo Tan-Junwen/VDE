@@ -15,9 +15,8 @@
 
 <a href="https://github.com/Tan-Junwen/VDE" target="_blank">
   <img src="https://img.shields.io/badge/Project-Website-blue.svg" alt="Project Page">
-</a>
-<a href="https://arxiv.org/pdf/2605.23381" target="_blank">
-  <img src="https://img.shields.io/badge/Paper-PDF-critical.svg?logo=adobeacrobatreader" alt="Paper">
+<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Tan_VDE_Training-Free_Accelerating_Rectified_Flow_Model_via_Velocity_Decomposition_and_CVPR_2026_paper.html" target="_blank">
+  <img src="https://img.shields.io/badge/Paper-CVF-critical.svg?logo=adobeacrobatreader" alt="Paper">
 </a>
 <a href="./LICENSE" target="_blank">
   <img src="https://img.shields.io/badge/License-Apache%202.0-yellow.svg" alt="License">
@@ -48,9 +47,10 @@ VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual 
 <!--
 - [2026/03/xx] ✨ **ComfyUI-VDE** is now available! Enjoy VDE acceleration directly in your ComfyUI workflows.
 -->
-- [2026/05/30] 🚀 The Code for **VDE** is officially released! Support Image and Video generation/editing.
-- [2026/05/22] 📄 Our paper is available on [arXiv](https://arxiv.org/pdf/2605.23381).
-- [2026/02/21] 🎉 **VDE** is accepted by **CVPR 2026**! 
+- [2026/05/31] 📄 The official CVPR version of **VDE** is available on [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_VDE_Training-Free_Accelerating_Rectified_Flow_Model_via_Velocity_Decomposition_and_CVPR_2026_paper.html).
+- [2026/05/30] 🚀 The code for **VDE** is officially released! Supports image and video generation/editing.
+- [2026/05/22] 📄 **VDE** is available on [arXiv](https://arxiv.org/pdf/2605.23381).
+- [2026/02/21] 🎉 **VDE** is accepted by **CVPR 2026**!
 
 ---
 
@@ -169,10 +169,11 @@ If you find VDE useful for your research or applications, please consider giving
 
 ```bibtex
 @inproceedings{tan2026vde,
-  title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
-  author    = {Junwen Tan and Jinglin Liang and Hongyuan Chen and Shuangping Huang},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2026}
+  title={VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
+  author={Tan, Junwen and Liang, Jinglin and Chen, Hongyuan and Huang, Shuangping},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={37918--37928},
+  year={2026}
 }
 ```
 
