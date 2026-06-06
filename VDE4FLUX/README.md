@@ -12,7 +12,6 @@
 |:-------------------:|:-------------:|:---------------:|:-----------------:|:---------------:|
 | **Latency**         | 8.20 s        | 3.70 s          | 3.04 s            | 2.72 s          |
 | **Speedup**         | 1.00×         | 2.21×           | 2.70×             | 3.01×           |
-| **SSIM ↑**          | -             | 0.8877          | 0.8499            | 0.8267          |
 | **T2I**             | <img width="120" alt="Flux Original" src="[YOUR_IMAGE_LINK_HERE]" /> | <img width="120" alt="VDE-slow" src="[YOUR_IMAGE_LINK_HERE]" /> | <img width="120" alt="VDE-medium" src="[YOUR_IMAGE_LINK_HERE]" /> | <img width="120" alt="VDE-fast" src="[YOUR_IMAGE_LINK_HERE]" /> |
 
 > 💡 Numbers above are example measurements; actual latency may vary depending on resolution, batch size, and hardware configuration. VDE consistently preserves structural integrity and fine details much better than naive step reduction or feature caching.
