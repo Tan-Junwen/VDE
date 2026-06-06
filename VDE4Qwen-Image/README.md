@@ -23,12 +23,6 @@
 Please refer to [Qwen-Image](https://github.com/QwenLM/Qwen-Image) for base environment setup.
 
 
-# Required for Qwen2.5-VL support
-pip install transformers>=4.51.3
-
-# Install the necessary diffusers library component
-pip install git+https://github.com/huggingface/diffusers
-
 ## 📖 Citation
 If you find **VDE** useful in your research or applications, please consider giving us a star ⭐ and citing it by the following BibTeX entry:
 
