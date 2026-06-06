@@ -24,18 +24,18 @@
 Please refer to the official projects for base installation instructions:
 -[**FLUX.1**](https://github.com/black-forest-labs/flux)
 
-### Usage 
+## Usage
 
-VDE provides three acceleration modes. You can configure them using the `--vde_mode` argument:
+VDE provides several acceleration settings controlled by `--stable-step` and `--interval`.
 
 ```bash
 # vanilla FLUX (no acceleration)
-python inference_flux.py
+python inference_flux1.py
 
-# VDE acceleration modes
-python inference_flux.py --vde_mode slow
-python inference_flux.py --vde_mode medium
-python inference_flux.py --vde_mode fast
+# VDE acceleration settings
+python inference_flux1.py --vde --stable-step 6 --interval 3   # slow
+python inference_flux1.py --vde --stable-step 6 --interval 4   # medium
+python inference_flux1.py --vde --stable-step 6 --interval 4   # fast
 
 ## 📖 Citation
 If you find **VDE** useful in your research or applications, please consider giving us a star ⭐ and citing it by the following BibTeX entry:
