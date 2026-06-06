@@ -114,8 +114,8 @@ def vde_flux_call(
     callback_on_step_end: Optional[Callable[[int, int, Dict], None]] = None,
     callback_on_step_end_tensor_inputs: List[str] = ["latents"],
     max_sequence_length: int = 512,
-    stable_step: int = 13,
-    interval: int = 3,
+    stable_step: int = 49,
+    interval: int = 1,
     save_latents_dir: Optional[str] = None,
 ):
     if stable_step < 1:
