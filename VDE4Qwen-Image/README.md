@@ -17,10 +17,21 @@
 
 ---
 
-## 🛠️ Installation & Usage 
+## 🛠️ Installation
 
 Please refer to [Qwen-Image](https://github.com/QwenLM/Qwen-Image) for base environment setup.
 
+## Usage
+
+VDE provides two acceleration settings controlled by `--stable-step` and `--interval`.
+
+```bash
+# vanilla Qwen-Image (no acceleration)
+python inference_qwenimage.py
+
+# VDE acceleration settings
+python inference_qwenimage.py --vde --stable-step 10 --interval 3   # slow
+python inference_qwenimage.py --vde --stable-step 10 --interval 5   # fast
 
 ## 📖 Citation
 If you find **VDE** useful in your research or applications, please consider giving us a star ⭐ and citing it by the following BibTeX entry:
