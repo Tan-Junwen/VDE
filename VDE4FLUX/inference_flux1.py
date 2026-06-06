@@ -300,7 +300,7 @@ def get_args():
     parser.add_argument("--device-map", type=str, default=os.environ.get("FLUX_DEVICE_MAP", "balanced"))
     parser.add_argument("--dtype", type=str, default="bf16")
     parser.add_argument("--vde", action="store_true", help="Enable VDE training-free acceleration.")
-    parser.add_argument("--stable-step", type=int, default=10)
+    parser.add_argument("--stable-step", type=int, default=6)
     parser.add_argument("--interval", type=int, default=3)
     return parser.parse_args()
 
