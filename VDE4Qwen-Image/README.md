@@ -39,10 +39,11 @@ If you find **VDE** useful in your research or applications, please consider giv
 
 ```bibtex
 @inproceedings{tan2026vde,
-  title     = {VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
-  author    = {Junwen Tan and Jinglin Liang and Hongyuan Chen and Shuangping Huang},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2026}
+  title={VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation},
+  author={Tan, Junwen and Liang, Jinglin and Chen, Hongyuan and Huang, Shuangping},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={37918--37928},
+  year={2026}
 }
 ```
 
