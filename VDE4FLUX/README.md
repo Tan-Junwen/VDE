@@ -6,7 +6,7 @@
 
 ## 📊 Inference Latency
 
-**Example latency comparisons on a single NVIDIA A800 @ 512×512:**
+**Example latency comparisons on a single NVIDIA A100 @ 1024×1024:**
 
 | Method              | FLUX.1 (T=50) | VDE-slow (Ours) | VDE-medium (Ours) | VDE-fast (Ours) |
 |:-------------------:|:-------------:|:---------------:|:-----------------:|:---------------:|
