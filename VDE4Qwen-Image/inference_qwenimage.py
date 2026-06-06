@@ -383,7 +383,7 @@ def get_args():
     parser = argparse.ArgumentParser(description="Qwen-Image inference with optional VDE acceleration.")
     parser.add_argument("--model", type=str, default="Qwen/Qwen-Image")
     parser.add_argument("--prompt", type=str, default="A bright sunny mountain lake, blue sky, colorful flowers.")
-    parser.add_argument("--negative-prompt", type=str, default="low resolution, low quality, blurry")
+    parser.add_argument("--negative-prompt", type=str, default="低分辨率，低画质，肢体畸形，手指畸形，画面过饱和，蜡像感，人脸无细节，过度光滑，画面具有AI感。构图混乱。文字模糊，扭曲。")
     parser.add_argument("--output", type=str, default=None)
     parser.add_argument("--height", type=int, default=1024)
     parser.add_argument("--width", type=int, default=1024)
