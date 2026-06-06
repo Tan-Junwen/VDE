@@ -18,7 +18,7 @@
 
 ---
 
-## 🛠️ Installation & Usage
+## 🛠️ Installation
 
 Please refer to the official projects for base installation instructions:
 -[**FLUX.1**](https://github.com/black-forest-labs/flux)
