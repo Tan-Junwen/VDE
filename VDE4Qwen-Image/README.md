@@ -11,10 +11,9 @@
 |:-------------------:|:-----------------:|:--------:|:--------:|
 | **Latency**         | 12.53 s           | 6.14 s   | 4.64 s   |
 | **Speedup**         | 1.00×             | 2.04×    | 2.70×    |
-| **SSIM ↑**          | -                 | 0.9362   | 0.8967   |
 | **T2I**             | <img width="160" alt="Qwen-Image" src="[YOUR_IMAGE_LINK_HERE]" /> | <img width="160" alt="VDE-slow" src="[YOUR_IMAGE_LINK_HERE]" /> | <img width="160" alt="VDE-fast" src="[YOUR_IMAGE_LINK_HERE]" /> |
 
-> 💡 *Note: VDE completely estimates the velocity output online directly from the current input, avoiding the severe artifact issues seen in traditional caching methods under high acceleration.*
+> 💡 *Note: VDE completely estimates the velocity output online directly from the current input, avoiding cache-input miamatch seen in traditional caching methods.*
 
 ---
 
