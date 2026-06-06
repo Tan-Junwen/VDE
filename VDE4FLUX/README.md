@@ -35,7 +35,7 @@ python inference_flux1.py
 # VDE acceleration settings
 python inference_flux1.py --vde --stable-step 6 --interval 3   # slow
 python inference_flux1.py --vde --stable-step 6 --interval 4   # medium
-python inference_flux1.py --vde --stable-step 6 --interval 4   # fast
+python inference_flux1.py --vde --stable-step 6 --interval 5   # fast
 
 ## 📖 Citation
 If you find **VDE** useful in your research or applications, please consider giving us a star ⭐ and citing it by the following BibTeX entry:
