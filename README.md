@@ -47,6 +47,7 @@ VDE achieves up to **2.04× - 3.22× acceleration** with minimal loss in visual 
 <!--
 - [2026/03/xx] ✨ **ComfyUI-VDE** is now available! Enjoy VDE acceleration directly in your ComfyUI workflows.
 -->
+- [2026/06/07] 🗓️ **VDE** will be presented at **CVPR 2026**: **Sun, Jun 7, 2026, 3:30 PM – 5:30 PM MDT**, **ExHall A 162**.
 - [2026/05/31] 📄 **VDE** is available on [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Tan_VDE_Training-Free_Accelerating_Rectified_Flow_Model_via_Velocity_Decomposition_and_CVPR_2026_paper.html).
 - [2026/05/30] 🚀 The code for **VDE** is officially released! Supports image and video generation/editing.
 - [2026/05/22] 📄 **VDE** is available on [arXiv](https://arxiv.org/pdf/2605.23381).
